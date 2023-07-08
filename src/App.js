@@ -20,10 +20,14 @@ function App() {
     setEditor(editor);
   }, []);
 
+  const handleCustomWeb = () => {
+    console.log("Customs Web Code To Save a Database");
+  }
+
   return (
     <div className="App">
       <div id="editor"></div>
-      <button>Save</button>
+      <button onClick={handleCustomWeb}>Save</button>
     </div>
   );
 }
