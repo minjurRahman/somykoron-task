@@ -1,6 +1,7 @@
 import { grapesjs } from "grapesjs";
 import { useEffect, useState } from "react";
-import plugin from "grapesjs-preset-webpage"
+import pluginPresent from "grapesjs-preset-webpage";
+
 import './App.css';
 
 function App() {
@@ -9,17 +10,20 @@ function App() {
   useEffect(() => {
     const editor = grapesjs.init({
       container: "#editor",
-      plugins: [plugin],
+      plugins: [
+        pluginPresent,
+      ],
       pluginsOpts: {
-        [plugin]: { /* options */ }
+        pluginPresent: {},
       }
     });
     setEditor(editor);
-  }, [])
+  }, []);
 
   return (
     <div className="App">
       <div id="editor"></div>
+      <button>Save</button>
     </div>
   );
 }
